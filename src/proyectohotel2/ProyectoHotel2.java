@@ -1,21 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectohotel2;
 
-/**
- *
- * @author super
- */
+import javax.swing.JOptionPane;
+
 public class ProyectoHotel2 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+       
+        //Invocacion de los contructores
+        CLoginUsuario  ex = new CLoginUsuario();
+        
+        ex.LoginUsuario();
+        
+        CLoginPass ez = new CLoginPass();
+        
+        ez.LoginContraseña();
+        
+        //Invocacion de los JFrame
+      frmPrincipal main = new frmPrincipal();
+         main.setVisible(true);
+        
     }
     
 }
