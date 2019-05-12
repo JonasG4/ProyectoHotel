@@ -2,6 +2,7 @@
 package proyectohotel2;
 
 import Conexion.Conexion;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -81,6 +82,11 @@ public class RegistroNuevoCliente extends javax.swing.JFrame {
         txtDUI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDUIActionPerformed(evt);
+            }
+        });
+        txtDUI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDUIKeyTyped(evt);
             }
         });
 
@@ -304,7 +310,7 @@ public class RegistroNuevoCliente extends javax.swing.JFrame {
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
        char c = evt.getKeyChar();
        
-       if((c<'a' || c>'z') && (c<'A' | c>'Z')) evt.consume();
+       if((c<'a' || c>'z') && (c<'A' | c>'Z') && c != KeyEvent.VK_SPACE) evt.consume();
     }//GEN-LAST:event_txtNombreKeyTyped
 
     private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
@@ -314,7 +320,7 @@ public class RegistroNuevoCliente extends javax.swing.JFrame {
     private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
     char c = evt.getKeyChar();
        
-       if((c<'a' || c>'z') && (c<'A' | c>'Z')) evt.consume();
+       if((c<'a' || c>'z') && (c<'A' || c>'Z') && c != KeyEvent.VK_SPACE ) evt.consume();
     }//GEN-LAST:event_txtApellidoKeyTyped
 
     private void txtEdadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEdadKeyTyped
@@ -328,6 +334,13 @@ public class RegistroNuevoCliente extends javax.swing.JFrame {
        
        if(c<'1' || c>'9') evt.consume();
     }//GEN-LAST:event_txtCelularKeyTyped
+
+    private void txtDUIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDUIKeyTyped
+     char c = evt.getKeyChar();
+     
+     if(c<'1' || c>'9') evt.consume();
+        
+    }//GEN-LAST:event_txtDUIKeyTyped
 
     /**
      * @param args the command line arguments
